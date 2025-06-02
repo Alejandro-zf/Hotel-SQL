@@ -6,7 +6,7 @@ CREATE TABLE Usuarios(
 	Id_usuario INT(15) PRIMARY KEY AUTO_INCREMENT,
 	Nom_Usuario  VARCHAR(50),
 	Ape_Usuario  VARCHAR(50),
-	Num_telefono  INT(15) UNIQUE,
+	Num_telefono  INT(15),
     Correo_electronico  VARCHAR(100),
     Num_document INT(10),
     RolesUsu INT(10),
@@ -21,11 +21,12 @@ Tip_document VARCHAR(20)
 CREATE TABLE Reservas(
 	Id_reserva INT(10) PRIMARY KEY AUTO_INCREMENT,
 	Id_cliente INT(10),
-	Fecha_creacion DATE,
-	Fecha_entre DATE,
-	Fecha_salida DATE,
+	Fecha_creacion DATETIME,
+	Fecha_entre DATETIME,
+	Fecha_salida DATETIME,
 	Total_preci INT (10),
 	Disponibilidad INT(10),
+    Descuento VARCHAR(10),
     Usua INT(15)
 );
 

@@ -26,7 +26,6 @@ DELIMITER ;
 USE `hotel`;
 DROP procedure IF EXISTS `hotel`.`Reservas`;
 ;
-
 DELIMITER $$
 USE `hotel`$$
 CREATE DEFINER=`root`@`localhost` PROCEDURE `Reservas`(

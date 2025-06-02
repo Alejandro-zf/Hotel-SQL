@@ -1,14 +1,16 @@
 INSERT INTO Roles (Rol_usuario) VALUES
 ('Cliente'),
-('Recepcionista'),
-('Limpieza');
+('Recepcionista');
 
 INSERT INTO Documento (Tip_document) VALUES
 ('Cedula ciudadana'),
 ('Cedula extranjeria'),
 ('Pasaporte');
 
-CALL Usuarios ("Jose","Ramirez","1013597489","nose@gmail.com","1013586452", 1,2);
+CALL Usuarios ("Jose","Ramirez","5013597489","jose@gmail.com","1017896513", 1,2);
+CALL Usuarios ("Andres","Bernal","1023598564","Andres@gmail.com","1013523451", 1,1);
+CALL Usuarios ("Oscar","Moreno","3024597482","Oscar@gmail.com","1013432592", 1,1);
+CALL Usuarios ("Santiago","Martinez","2317697481","Santiago@gmail.com","1013597865", 1,2);
 SELECT * FROM Usuarios;
 
 INSERT INTO Tip_Habitacion (Nom_tip) VALUES 
@@ -22,3 +24,9 @@ INSERT INTO Tip_Habitacion (Nom_tip) VALUES
 
 CALL Habitaciones ("2","Mediano","30.000.000.","2 personas","3");
 SELECT * FROM Habitaciones;
+
+#Ejemplos del tigger
+
+INSERT INTO Reservas (Total_preci, fecha_creacion, fecha_entre)
+VALUES (100, '2025-06-01 09:30:00', '2025-06-20 17:00:00'); 
+SELECT * FROM Reservas 
