@@ -1,6 +1,5 @@
-
 USE `hotel`;
-DROP procedure IF EXISTS `hotel`.`Usuarios`;
+DROP procedure IF EXISTS `Usuarios`;
 ;
 
 DELIMITER $$
@@ -24,13 +23,14 @@ DELIMITER ;
 #////////////////////////////////////////////////////////////////////////////////////Proceso de reservas//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// 
 
 USE `hotel`;
-DROP procedure IF EXISTS `hotel`.`Reservas`;
+DROP procedure IF EXISTS `Reservas`;
 ;
 DELIMITER $$
 USE `hotel`$$
 CREATE DEFINER=`root`@`localhost` PROCEDURE `Reservas`(
 	IN Id_reserva int(10), 
 	IN Id_cliente int(10), 
+    IN Id_habitacion int(10),
 	IN Fecha_creacion date, 
 	IN Fecha_entre date, 
 	IN Fecha_salida date, 
@@ -39,8 +39,8 @@ CREATE DEFINER=`root`@`localhost` PROCEDURE `Reservas`(
 	IN Usua int(15)
 )
 BEGIN
-	INSERT INTO Usuarios(Id_reserva,Id_cliente,Fecha_creacion,Fecha_entre,Fecha_salida,Total_preci,Disponibilidad,Usua)
-    VALUES(Id_reserva,Id_cliente,Fecha_creacion,Fecha_entre,Fecha_salida,Total_preci,Disponibilidad,Usua);
+	INSERT INTO Usuarios(Id_reserva,Id_cliente, Id_habitacion,Fecha_creacion,Fecha_entre,Fecha_salida,Total_preci,Disponibilidad,Usua)
+    VALUES(Id_reserva,Id_cliente, Id_habitacion,Fecha_creacion,Fecha_entre,Fecha_salida,Total_preci,Disponibilidad,Usua);
 END$$
 
 DELIMITER ;
@@ -49,7 +49,7 @@ DELIMITER ;
 #////////////////////////////////////////////////////////////////////////////////////Proceso de habitaciones//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// 
 
 USE `hotel`;
-DROP procedure IF EXISTS `proyecto`.`Habitaciones`;
+DROP procedure IF EXISTS `Habitaciones`;
 ;
 
 DELIMITER $$

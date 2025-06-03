@@ -1,4 +1,4 @@
- DROP DATABASE IF EXISTS Hotel;
+DROP DATABASE IF EXISTS Hotel;
 CREATE DATABASE Hotel;
 USE Hotel;
 
@@ -21,6 +21,7 @@ Tip_document VARCHAR(20)
 CREATE TABLE Reservas(
 	Id_reserva INT(10) PRIMARY KEY AUTO_INCREMENT,
 	Id_cliente INT(10),
+    Id_habitacion INT(10),
 	Fecha_creacion DATETIME,
 	Fecha_entre DATETIME,
 	Fecha_salida DATETIME,

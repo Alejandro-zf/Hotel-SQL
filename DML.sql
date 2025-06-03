@@ -29,4 +29,10 @@ SELECT * FROM Habitaciones;
 
 INSERT INTO Reservas (Total_preci, fecha_creacion, fecha_entre)
 VALUES (100, '2025-06-01 09:30:00', '2025-06-20 17:00:00'); 
-SELECT * FROM Reservas 
+SELECT * FROM Reservas;
+
+#Ejemplo 2
+
+INSERT INTO Reservas (Id_habitacion, fecha_creacion, fecha_entre, fecha_salida, Total_preci)
+VALUES ("2", "2025-06-03 10:25:00", "2025-06-07 12:15:00", "2025-06-08 16:55:00", 100);
+SELECT * FROM Reservas;
